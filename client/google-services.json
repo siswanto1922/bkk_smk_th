@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "965747804107",
+    "firebase_url": "https://bkk-smk-thp.firebaseio.com",
+    "project_id": "bkk-smk-thp",
+    "storage_bucket": "bkk-smk-thp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965747804107:android:c40dbb700c8d9bea27984e",
+        "android_client_info": {
+          "package_name": "com.moemoedev.bkkclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965747804107-153at9kojrn8qj7lq4jldeheo9mi01o6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzXgfM1FKSXusV-opRgrYH6lMGZxC1ztA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965747804107-153at9kojrn8qj7lq4jldeheo9mi01o6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965747804107:android:586a64040bb8ee2827984e",
+        "android_client_info": {
+          "package_name": "com.moemoedev.client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965747804107-153at9kojrn8qj7lq4jldeheo9mi01o6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzXgfM1FKSXusV-opRgrYH6lMGZxC1ztA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965747804107-153at9kojrn8qj7lq4jldeheo9mi01o6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

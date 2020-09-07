@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AuthActivity">
+
+
+
+    <ImageView
+        android:id="@+id/art_bottom"
+        android:layout_width="450dp"
+        android:layout_height="700dp"
+        android:src="@drawable/art_bottom"
+        android:scaleType="centerCrop"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-300dp"/>
+    <ImageView
+        android:id="@+id/art_top"
+        android:layout_width="450dp"
+        android:layout_height="700dp"
+        android:src="@drawable/art_top"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="-100dp"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo"/>
+
+
+    <LinearLayout
+        android:alpha="0"
+        android:id="@+id/lay_move_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp">
+        <Button
+            android:id="@+id/btnToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_gold"
+            android:layout_margin="10dp"
+            android:text="Login"
+            android:fontFamily="@font/quicksandbold"/>
+        <Button
+            android:id="@+id/btnToRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_white"
+            android:layout_margin="10dp"
+            android:text="Register"
+            android:fontFamily="@font/quicksandbold"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:alpha="0"
+        android:layout_below="@id/lay_move_btn"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/auth_frame_layout"/>
+
+
+
+</RelativeLayout>

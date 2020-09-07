@@ -1,0 +1,2 @@
+include ':admin', ':client'
+rootProject.name='BKK SMK THP'

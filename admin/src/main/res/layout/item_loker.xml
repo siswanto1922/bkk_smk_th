@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/CardView.Light"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:id="@+id/bannerLoker"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:src="#BDBDBD"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:id="@+id/tvLokerDeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13-10-2020"
+            android:fontFamily="@font/quicksandbold"
+            android:textColor="#000"
+            android:drawableStart="@drawable/ic_access_time_black_24dp"
+            android:drawablePadding="5dp"
+            android:layout_above="@id/tvLokerIndustry"
+            android:layout_alignEnd="@id/bannerLoker"
+            android:layout_marginEnd="16dp"/>
+        <TextView
+            android:id="@+id/tvLokerIndustry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bannerLoker"
+            android:text="PT. Mencari Cinta Sejati"
+            android:fontFamily="@font/quicksandbold"
+            android:textSize="16dp"
+            android:layout_marginStart="16dp"
+            android:textColor="#000"
+            android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/tvLokerDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvLokerIndustry"
+            android:text="@string/lorem"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
