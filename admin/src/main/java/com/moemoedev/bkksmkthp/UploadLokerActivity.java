@@ -2,7 +2,9 @@ package com.moemoedev.bkksmkthp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.DatePickerDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +13,7 @@ import android.os.Handler;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -18,6 +21,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -27,13 +31,17 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class UploadLokerActivity extends AppCompatActivity {
+import java.text.DateFormat;
+import java.util.Calendar;
+
+public class UploadLokerActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private static final int PICK_IMAGE_REQUEST = 1;
     private ImageView ivBannerLoker;
     private Button btnLokerImgselector, btnUploadLoker;
     private EditText etIndustry,  etLokerDescription, etLokerDeadline;
     private ProgressBar uploadProgressBar;
+    private TextInputLayout LokerDeadline;
 
     private Uri mImageUri;
 
@@ -53,6 +61,7 @@ public class UploadLokerActivity extends AppCompatActivity {
         etLokerDeadline = findViewById(R.id.et_loker_deadline);
         ivBannerLoker = findViewById(R.id.loker_image_viewer);
         uploadProgressBar = findViewById(R.id.progress_bar);
+        LokerDeadline = findViewById(R.id.loker_deadline);
 
         mStorageRef = FirebaseStorage.getInstance().getReference().child("loker_uploads");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("loker_uploads");
@@ -63,6 +72,16 @@ public class UploadLokerActivity extends AppCompatActivity {
                 openFileChooser();
             }
         });
+
+        etLokerDeadline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(), "date picker");
+
+            }
+        });
+
         btnUploadLoker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +93,20 @@ public class UploadLokerActivity extends AppCompatActivity {
             }
         });
     }
+
+    //datepicker
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month);
+        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+
+        etLokerDeadline.setText(currentDateString);
+
+    }
+
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");

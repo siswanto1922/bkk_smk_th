@@ -11,11 +11,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        android:background="@color/colorPrimary">
+        android:background="#FFF">
         <ImageView
             android:id="@+id/bannerLoker"
             android:layout_width="match_parent"
             android:layout_height="130dp"
+            android:scaleType="centerCrop"
             android:src="#BDBDBD"/>
         <TextView
             android:id="@+id/tvLokerDeadline"

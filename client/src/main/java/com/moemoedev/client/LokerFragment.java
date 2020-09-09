@@ -57,7 +57,7 @@ public class LokerFragment extends Fragment implements RecyclerLokerAdapter.OnIt
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_register, container, false);
+        View v = inflater.inflate(R.layout.fragment_loker, container, false);
 
         mRecyclerView = v.findViewById(R.id.lokerRecycler);
         mRecyclerView.setHasFixedSize(true);
