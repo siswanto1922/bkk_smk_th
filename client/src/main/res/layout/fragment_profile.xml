@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <!--header-->
     <RelativeLayout
@@ -26,5 +29,11 @@
             android:fontFamily="@font/quicksandbold"
             android:textColor="#FFF"/>
     </RelativeLayout>
-
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:layout_centerInParent="true"/>
+    </RelativeLayout>
 </FrameLayout>
