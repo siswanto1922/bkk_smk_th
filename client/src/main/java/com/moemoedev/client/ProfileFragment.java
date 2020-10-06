@@ -37,14 +37,6 @@ public class ProfileFragment extends Fragment {
 
         final Button btnLogout = v.findViewById(R.id.btnLogout);
 
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "Logout Berhasil", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getActivity(),AuthActivity.class));
-            }
-        });
-
         return v;
 
     }
