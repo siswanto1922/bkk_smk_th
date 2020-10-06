@@ -26,7 +26,6 @@ public class AuthActivity extends AppCompatActivity {
 
         authframeLayout = findViewById(R.id.auth_frame_layout);
         switchFrag = findViewById(R.id.switch_fragment);
-        sidePath = findViewById(R.id.side_path);
 
         boolAuth = true;
         setBoolAuth(boolAuth);
