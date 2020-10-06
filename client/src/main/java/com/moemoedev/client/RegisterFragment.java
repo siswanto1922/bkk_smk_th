@@ -145,7 +145,7 @@ public class RegisterFragment extends Fragment implements AdapterView.OnItemSele
                                         }
                                     });
                                 } else {
-
+                                    Toast.makeText(getActivity(), "gagal", Toast.LENGTH_SHORT).show();
                                 }
 
                                 // ...
