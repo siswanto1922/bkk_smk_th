@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LokerDetailActivity"></activity>
+        <activity android:name=".ApplicantFormActivity"></activity>
+        <activity android:name=".LokerDetailActivity" />
         <activity android:name=".AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

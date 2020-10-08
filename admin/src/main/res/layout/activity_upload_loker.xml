@@ -93,25 +93,12 @@
                     android:layout_height="wrap_content"
                     android:hint="Deadline Pendftaran"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/loker_link"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/loker_deadline"
-                android:focusable="true"
-                android:focusableInTouchMode="true">>
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_loker_link"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Link Google Form"/>
-            </com.google.android.material.textfield.TextInputLayout>
             <Button
                 android:id="@+id/upload_loker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_gold"
-                android:layout_below="@+id/loker_link"
+                android:layout_below="@+id/loker_deadline"
                 android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
                 android:text="Upload"

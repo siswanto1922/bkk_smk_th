@@ -1,6 +1,7 @@
 package com.moemoedev.client;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -35,13 +37,23 @@ public class RecyclerLokerAdapter extends RecyclerView.Adapter<RecyclerLokerAdap
     }
 
     @Override
-    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        Loker currentTeacher = lokers.get(position);
-        holder.industryTextView.setText(currentTeacher.getIndustry());
-        holder.descriptionTextView.setText(currentTeacher.getDescription());
-        holder.deadlineTextView.setText(currentTeacher.getDeadline());
+    public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
+        final Loker currentLoker = lokers.get(position);
+        holder.industryTextView.setText(currentLoker.getIndustry());
+        holder.descriptionTextView.setText(currentLoker.getDescription());
+        holder.deadlineTextView.setText(currentLoker.getDeadline());
+        holder.itemLoker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, LokerDetailActivity.class);
+                i.putExtra("industry", currentLoker.getIndustry());
+                i.putExtra("desc", currentLoker.getDescription());
+                i.putExtra("deadline", currentLoker.getDeadline());
+                context.startActivity(i);
+            }
+        });
         Picasso.with(context)
-                .load(currentTeacher.getImageURL())
+                .load(currentLoker.getImageURL())
                 .placeholder(R.drawable.pleaceholder)
                 .fit()
                 .centerCrop()
@@ -56,12 +68,15 @@ public class RecyclerLokerAdapter extends RecyclerView.Adapter<RecyclerLokerAdap
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
         public TextView industryTextView,descriptionTextView,deadlineTextView;
         public ImageView industryImageView;
+        public CardView itemLoker;
         public RecyclerViewHolder(View itemView) {
             super(itemView);
             industryTextView =itemView.findViewById ( R.id.tvLokerIndustry);
             descriptionTextView = itemView.findViewById(R.id.tvLokerDescription);
             deadlineTextView = itemView.findViewById(R.id.tvLokerDeadline);
             industryImageView = itemView.findViewById(R.id.bannerLoker);
+            itemLoker = itemView.findViewById(R.id.item_loker);
+
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
         }

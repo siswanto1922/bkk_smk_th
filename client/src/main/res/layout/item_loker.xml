@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:theme="@style/CardView.Light"
     android:layout_marginBottom="10dp"
+    android:id="@+id/item_loker"
     app:cardCornerRadius="20dp">
 
     <RelativeLayout
