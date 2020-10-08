@@ -37,6 +37,8 @@ public class ProfileFragment extends Fragment {
 
         final Button btnLogout = v.findViewById(R.id.btnLogout);
 
+
+
         return v;
 
     }

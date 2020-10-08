@@ -8,6 +8,7 @@ public class Loker {
     private String key;
     private String description;
     private String deadline;
+    private String link;
     private int position;
 
     public Loker() {
@@ -16,11 +17,12 @@ public class Loker {
     public Loker(int position){
         this.position = position;
     }
-    public Loker(String industry, String imageURL, String description, String deadline){
+    public Loker(String industry, String imageURL, String description, String deadline, String link){
         this.industry = industry;
         this.imageURL = imageURL;
         this.description = description;
         this.deadline = deadline;
+        this.link = link;
     }
 
     public String getIndustry() {
@@ -44,6 +46,9 @@ public class Loker {
         this.deadline = deadline;
     }
 
+    public String getLink() {
+        return link;
+    }
 
     public String getImageURL() {
         return imageURL;

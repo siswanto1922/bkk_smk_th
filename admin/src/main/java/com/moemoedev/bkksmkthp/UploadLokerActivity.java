@@ -39,7 +39,7 @@ public class UploadLokerActivity extends AppCompatActivity implements DatePicker
     private static final int PICK_IMAGE_REQUEST = 1;
     private ImageView ivBannerLoker;
     private Button btnLokerImgselector, btnUploadLoker;
-    private EditText etIndustry,  etLokerDescription, etLokerDeadline;
+    private EditText etIndustry,  etLokerDescription, etLokerDeadline, etLokerLink;
     private ProgressBar uploadProgressBar;
     private TextInputLayout LokerDeadline;
 
@@ -59,6 +59,7 @@ public class UploadLokerActivity extends AppCompatActivity implements DatePicker
         etIndustry = findViewById(R.id.et_loker_industry_name);
         etLokerDescription = findViewById(R.id.et_loker_description);
         etLokerDeadline = findViewById(R.id.et_loker_deadline);
+        etLokerLink = findViewById(R.id.et_loker_link);
         ivBannerLoker = findViewById(R.id.loker_image_viewer);
         uploadProgressBar = findViewById(R.id.progress_bar);
         LokerDeadline = findViewById(R.id.loker_deadline);
@@ -157,7 +158,7 @@ public class UploadLokerActivity extends AppCompatActivity implements DatePicker
                             Toast.makeText(UploadLokerActivity.this, "Loker Berhasil Di upload", Toast.LENGTH_LONG).show();
                             Loker upload = new Loker(etIndustry.getText().toString().trim(),
                                     taskSnapshot.getMetadata().getReference().getDownloadUrl().toString(),
-                                    etLokerDescription.getText().toString(), etLokerDeadline.getText().toString());
+                                    etLokerDescription.getText().toString(), etLokerDeadline.getText().toString(), etLokerLink.getText().toString());
 
                             String uploadId = mDatabaseRef.push().getKey();
                             mDatabaseRef.child(uploadId).setValue(upload);
