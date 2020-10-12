@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:theme="@style/CardView.Light"
     android:layout_marginBottom="10dp"
-    app:cardCornerRadius="20dp">
+    app:cardCornerRadius="20dp"
+    android:id="@+id/item_loker">
 
     <RelativeLayout
         android:layout_width="match_parent"

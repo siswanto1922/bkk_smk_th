@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LokerDetailActivity"
+    tools:context=".DetailLokerActivity"
     android:padding="16dp">
 
     <androidx.cardview.widget.CardView
@@ -51,10 +51,10 @@
         android:text="@string/lorem"
         android:layout_marginTop="5dp"/>
     <Button
-        android:id="@+id/btn_Lamar"
+        android:id="@+id/btn_checkApplicant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Daftar"
+        android:text="Lihat Pelamar"
         android:background="@drawable/rounded_gold"
         android:layout_alignParentBottom="true"
         android:textColor="#FFF"/>
