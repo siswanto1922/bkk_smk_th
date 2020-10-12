@@ -44,7 +44,7 @@ public class RecyclerLokerAdapter extends RecyclerView.Adapter<RecyclerLokerAdap
         holder.itemLoker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, LokerDetailActivity.class);
+                Intent i = new Intent(context, DetailLokerActivity.class);
                 i.putExtra("key",currentLoker.getKey());
                 i.putExtra("industry", currentLoker.getIndustry());
                 i.putExtra("desc", currentLoker.getDescription());

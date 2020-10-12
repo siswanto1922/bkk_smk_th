@@ -43,7 +43,7 @@ public class LokerFragment extends Fragment implements RecyclerLokerAdapter.OnIt
     private Button goToUpload;
 
     private void openDetailActivity(String[] data){
-        Intent intent = new Intent(getActivity(), LokerDetailActivity.class);
+        Intent intent = new Intent(getActivity(), DetailLokerActivity.class);
         intent.putExtra("NAME_KEY",data[0]);
         intent.putExtra("DESCRIPTION_KEY",data[1]);
         intent.putExtra("IMAGE_KEY",data[2]);
