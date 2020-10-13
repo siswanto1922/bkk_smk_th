@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApplicantDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="abcdefghijklmn"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-mail"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="abcde@gmail.com"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NISN"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_nisn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="123456898309"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_jk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="123456898309"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tempat, Tanggal Lahir"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_ttl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pati"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No. Telp"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_telp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0812312312312"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alamat"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="123456898309"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jurusan"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_jurusan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teknik Komputer dan Jaringan"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tinggi Badan (cm)"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_tb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="170cm"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Berat Badan (kg)"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_bb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="60kg"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tahun Kelulusan"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/detailApplicant_graduate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2022"
+                android:fontFamily="@font/quicksandmedium"
+                android:textColor="#000"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

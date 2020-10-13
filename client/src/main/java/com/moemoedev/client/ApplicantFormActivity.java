@@ -75,7 +75,7 @@ public class ApplicantFormActivity extends AppCompatActivity {
                 DatabaseReference user = FirebaseDatabase.getInstance().getReference("User");
                 DatabaseReference childUser = user.child(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 String id = childUser.getKey().toString();
-                Toast.makeText(getApplicationContext(), ""+id,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Pendaftaran Berhasil",Toast.LENGTH_SHORT).show();
                 String nama = appFormName.getText().toString();
                 String email = appFormEmail.getText().toString();
                 String nisn = appFormNisn.getText().toString();

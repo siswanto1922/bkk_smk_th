@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DetailLokerActivity extends AppCompatActivity {
 
@@ -30,7 +31,10 @@ public class DetailLokerActivity extends AppCompatActivity {
         detailCheckApplicant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DetailLokerActivity.this , CheckApplicantActivity.class));
+                Intent i = new Intent(DetailLokerActivity.this, CheckApplicantActivity.class);
+                String key = getIntent().getStringExtra("key");
+                i.putExtra("key", key);
+                startActivity(i);
             }
         });
 
