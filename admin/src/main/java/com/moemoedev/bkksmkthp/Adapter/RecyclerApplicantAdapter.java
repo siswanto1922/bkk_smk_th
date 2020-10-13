@@ -1,4 +1,4 @@
-package com.moemoedev.bkksmkthp;
+package com.moemoedev.bkksmkthp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,12 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.moemoedev.bkksmkthp.Activity.ApplicantDetailActivity;
+import com.moemoedev.bkksmkthp.Model.Applicant;
+import com.moemoedev.bkksmkthp.R;
 
 import java.util.List;
 

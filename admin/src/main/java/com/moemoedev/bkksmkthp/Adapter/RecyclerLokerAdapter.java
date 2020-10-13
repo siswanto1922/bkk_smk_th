@@ -1,5 +1,4 @@
-package com.moemoedev.client;
-
+package com.moemoedev.bkksmkthp.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.view.ContextMenu;
@@ -15,6 +14,9 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.moemoedev.bkksmkthp.Activity.DetailLokerActivity;
+import com.moemoedev.bkksmkthp.Model.Loker;
+import com.moemoedev.bkksmkthp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -45,7 +47,7 @@ public class RecyclerLokerAdapter extends RecyclerView.Adapter<RecyclerLokerAdap
         holder.itemLoker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, LokerDetailActivity.class);
+                Intent i = new Intent(context, DetailLokerActivity.class);
                 i.putExtra("key",currentLoker.getKey());
                 i.putExtra("industry", currentLoker.getIndustry());
                 i.putExtra("desc", currentLoker.getDescription());

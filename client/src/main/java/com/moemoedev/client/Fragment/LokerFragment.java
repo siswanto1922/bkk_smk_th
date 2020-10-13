@@ -1,4 +1,4 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Fragment;
 
 
 import android.content.Intent;
@@ -22,6 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.moemoedev.client.Activity.LokerDetailActivity;
+import com.moemoedev.client.Model.Loker;
+import com.moemoedev.client.R;
+import com.moemoedev.client.Adapter.RecyclerLokerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

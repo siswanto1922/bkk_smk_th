@@ -1,4 +1,4 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Fragment;
 
 
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.moemoedev.client.R;
 
 
 /**

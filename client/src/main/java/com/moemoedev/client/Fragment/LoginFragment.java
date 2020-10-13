@@ -1,4 +1,4 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Fragment;
 
 
 import android.content.Intent;
@@ -11,17 +11,16 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.moemoedev.client.Activity.MainActivity;
+import com.moemoedev.client.R;
 
 
 /**
@@ -40,7 +39,7 @@ public class LoginFragment extends Fragment {
         super.onStart();
         if (firebaseAuth.getCurrentUser() != null){
             getActivity().finish();
-            startActivity(new Intent(getActivity(),MainActivity.class));
+            startActivity(new Intent(getActivity(), MainActivity.class));
         }
     }
 

@@ -1,4 +1,4 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Model;
 
 public class Applicant {
     public String id;

@@ -1,4 +1,4 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.moemoedev.client.R;
 import com.squareup.picasso.Picasso;
 
 public class LokerDetailActivity extends AppCompatActivity {

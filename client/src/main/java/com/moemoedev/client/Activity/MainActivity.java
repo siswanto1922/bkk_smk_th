@@ -1,10 +1,14 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Activity;
 
 import android.os.Bundle;
-import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.moemoedev.client.Fragment.FlowFragment;
+import com.moemoedev.client.Fragment.LokerFragment;
+import com.moemoedev.client.Fragment.ProfileFragment;
+import com.moemoedev.client.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.moemoedev.bkksmkthp;
+package com.moemoedev.bkksmkthp.Model;
 
 import com.google.firebase.database.Exclude;
 

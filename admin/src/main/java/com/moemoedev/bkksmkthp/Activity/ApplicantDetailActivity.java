@@ -1,10 +1,12 @@
-package com.moemoedev.bkksmkthp;
+package com.moemoedev.bkksmkthp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.moemoedev.bkksmkthp.R;
 
 public class ApplicantDetailActivity extends AppCompatActivity {
 

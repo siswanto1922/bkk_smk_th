@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D6F7FF"
-    tools:context=".ApplicantFormActivity">
+    tools:context=".Activity.ApplicantFormActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.moemoedev.bkksmkthp;
+package com.moemoedev.bkksmkthp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.moemoedev.bkksmkthp.R;
 import com.squareup.picasso.Picasso;
 
 public class DetailLokerActivity extends AppCompatActivity {

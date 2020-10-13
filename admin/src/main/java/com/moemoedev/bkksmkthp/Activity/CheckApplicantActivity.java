@@ -1,12 +1,10 @@
-package com.moemoedev.bkksmkthp;
+package com.moemoedev.bkksmkthp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -17,6 +15,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.moemoedev.bkksmkthp.Model.Applicant;
+import com.moemoedev.bkksmkthp.R;
+import com.moemoedev.bkksmkthp.Adapter.RecyclerApplicantAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

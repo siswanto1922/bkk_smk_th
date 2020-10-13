@@ -1,8 +1,6 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
@@ -10,7 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+
+import com.moemoedev.client.Fragment.LoginFragment;
+import com.moemoedev.client.R;
+import com.moemoedev.client.Fragment.RegisterFragment;
 
 public class AuthActivity extends AppCompatActivity {
 

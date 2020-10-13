@@ -1,4 +1,4 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Fragment;
 
 
 import android.content.Intent;
@@ -25,9 +25,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-
-import java.util.concurrent.Executor;
+import com.moemoedev.client.Activity.MainActivity;
+import com.moemoedev.client.Model.User;
+import com.moemoedev.client.R;
 
 
 /**
@@ -141,7 +141,7 @@ public class RegisterFragment extends Fragment implements AdapterView.OnItemSele
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             Toast.makeText(getActivity(), "Pendaftaran Berhasil", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getActivity(),MainActivity.class));
+                                            startActivity(new Intent(getActivity(), MainActivity.class));
                                         }
                                     });
                                 } else {

@@ -1,4 +1,4 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Model;
 
 import com.google.firebase.database.Exclude;
 

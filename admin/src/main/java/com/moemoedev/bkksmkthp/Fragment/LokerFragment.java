@@ -1,4 +1,4 @@
-package com.moemoedev.bkksmkthp;
+package com.moemoedev.bkksmkthp.Fragment;
 
 
 import android.content.Intent;
@@ -23,6 +23,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.moemoedev.bkksmkthp.Activity.DetailLokerActivity;
+import com.moemoedev.bkksmkthp.Activity.UploadLokerActivity;
+import com.moemoedev.bkksmkthp.Adapter.RecyclerLokerAdapter;
+import com.moemoedev.bkksmkthp.Model.Loker;
+import com.moemoedev.bkksmkthp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,7 +104,7 @@ public class LokerFragment extends Fragment implements RecyclerLokerAdapter.OnIt
         goToUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),UploadLokerActivity.class));
+                startActivity(new Intent(getActivity(), UploadLokerActivity.class));
             }
         });
 

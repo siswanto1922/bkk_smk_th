@@ -1,4 +1,4 @@
-package com.moemoedev.bkksmkthp;
+package com.moemoedev.bkksmkthp.Model;
 
 public class Applicant {
     public String id;

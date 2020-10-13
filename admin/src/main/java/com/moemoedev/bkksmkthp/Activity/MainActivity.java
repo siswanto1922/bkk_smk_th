@@ -1,4 +1,4 @@
-package com.moemoedev.bkksmkthp;
+package com.moemoedev.bkksmkthp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.moemoedev.bkksmkthp.Fragment.LokerFragment;
+import com.moemoedev.bkksmkthp.R;
 
 public class MainActivity extends AppCompatActivity {
 
