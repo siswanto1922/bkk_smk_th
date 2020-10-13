@@ -50,6 +50,7 @@ public class RecyclerLokerAdapter extends RecyclerView.Adapter<RecyclerLokerAdap
                 i.putExtra("industry", currentLoker.getIndustry());
                 i.putExtra("desc", currentLoker.getDescription());
                 i.putExtra("deadline", currentLoker.getDeadline());
+                i.putExtra("imgUrl",currentLoker.getImageURL());
                 context.startActivity(i);
             }
         });

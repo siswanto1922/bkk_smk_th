@@ -6,12 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class LokerDetailActivity extends AppCompatActivity {
 
     TextView detailIndustry, detailDesc, detailDeadline;
     Button detailBtnLamar;
+    ImageView bannerLoker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +26,17 @@ public class LokerDetailActivity extends AppCompatActivity {
         detailDesc = findViewById(R.id.detailActivity_desc);
         detailDeadline = findViewById(R.id.detailActivity_deadline);
         detailBtnLamar = findViewById(R.id.btn_Lamar);
+        bannerLoker = findViewById(R.id.bannerLoker);
 
         detailIndustry.setText(getIntent().getStringExtra("industry"));
         detailDesc.setText(getIntent().getStringExtra("desc"));
         detailDeadline.setText(getIntent().getStringExtra("deadline"));
+        Picasso.with(this)
+                .load(getIntent().getStringExtra("imgUrl"))
+                .placeholder(R.drawable.pleaceholder)
+                .fit()
+                .centerCrop()
+                .into(bannerLoker);
 
         detailBtnLamar.setOnClickListener(new View.OnClickListener() {
             @Override
