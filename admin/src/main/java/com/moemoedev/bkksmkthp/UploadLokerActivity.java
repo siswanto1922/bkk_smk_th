@@ -19,8 +19,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -42,7 +44,7 @@ public class UploadLokerActivity extends AppCompatActivity implements DatePicker
     private EditText etIndustry,  etLokerDescription, etLokerDeadline, etLokerLink;
     private ProgressBar uploadProgressBar;
     private TextInputLayout LokerDeadline;
-
+    private String lokerImgUri;
     private Uri mImageUri;
 
     private StorageReference mStorageRef;
@@ -88,7 +90,10 @@ public class UploadLokerActivity extends AppCompatActivity implements DatePicker
                 if (mUploadTask != null && mUploadTask.isInProgress()) {
                     Toast.makeText(UploadLokerActivity.this, "An Upload is Still in Progress", Toast.LENGTH_SHORT).show();
                 } else {
-                    uploadFile();
+                    submitLoker(new Loker(etIndustry.getText().toString(),
+                            lokerImgUri,
+                            etLokerDescription.getText().toString(),
+                            etLokerDeadline.getText().toString()));
                 }
             }
         });
@@ -121,9 +126,22 @@ public class UploadLokerActivity extends AppCompatActivity implements DatePicker
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
             mImageUri = data.getData();
+            uploadImageToFirebase();
 
             Picasso.with(this).load(mImageUri).into(ivBannerLoker);
         }
+    }
+
+    private void submitLoker(Loker loker) {
+        String uploadId = mDatabaseRef.push().getKey();
+        mDatabaseRef.child(uploadId).setValue(loker).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(getApplicationContext(),"Upload Loker Sukses",Toast.LENGTH_SHORT).show();
+            }
+        });
+        uploadProgressBar.setVisibility(View.INVISIBLE);
+        openImagesActivity ();
     }
 
     private String getFileExtension(Uri uri) {
@@ -132,7 +150,7 @@ public class UploadLokerActivity extends AppCompatActivity implements DatePicker
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    private void uploadFile() {
+    private void uploadImageToFirebase() {
         if (mImageUri != null) {
             StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
                     + "." + getFileExtension(mImageUri));
@@ -153,17 +171,14 @@ public class UploadLokerActivity extends AppCompatActivity implements DatePicker
                                     uploadProgressBar.setProgress(0);
                                 }
                             }, 500);
+                            taskSnapshot.getStorage().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    lokerImgUri = task.getResult().toString();
+                                    Toast.makeText(getApplicationContext(), "Upload foto sukses" + lokerImgUri, Toast.LENGTH_SHORT).show();
+                                }
+                            });
 
-                            Toast.makeText(UploadLokerActivity.this, "Loker Berhasil Di upload", Toast.LENGTH_LONG).show();
-                            Loker upload = new Loker(etIndustry.getText().toString().trim(),
-                                    taskSnapshot.getMetadata().getReference().getDownloadUrl().toString(),
-                                    etLokerDescription.getText().toString(), etLokerDeadline.getText().toString());
-
-                            String uploadId = mDatabaseRef.push().getKey();
-                            mDatabaseRef.child(uploadId).setValue(upload);
-
-                            uploadProgressBar.setVisibility(View.INVISIBLE);
-                            openImagesActivity ();
 
                         }
                     })
