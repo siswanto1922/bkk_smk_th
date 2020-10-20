@@ -189,7 +189,8 @@
                         android:text="Jurusan"
                         android:textColor="#000"
                         android:layout_below="@id/address"
-                        android:fontFamily="@font/quicksandbold"/>
+                        android:fontFamily="@font/quicksandbold"
+                        android:layout_marginTop="16dp"/>
                     <Spinner
                         android:id="@+id/spin_jurusan"
                         android:layout_width="wrap_content"
@@ -202,6 +203,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tahun Kelulusan"
+                        android:layout_marginTop="16dp"
                         android:textColor="#000"
                         android:layout_below="@id/spin_jurusan"
                         android:fontFamily="@font/quicksandbold"/>

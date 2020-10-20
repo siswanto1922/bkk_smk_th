@@ -120,7 +120,6 @@
                     android:hint="L/P"
                     android:textColor="#000"/>
 
-
                 <TextView
                     android:id="@+id/tgl"
                     android:layout_width="wrap_content"
