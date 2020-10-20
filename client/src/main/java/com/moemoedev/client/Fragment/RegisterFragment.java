@@ -58,18 +58,26 @@ public class RegisterFragment extends Fragment implements AdapterView.OnItemSele
         final EditText etNisn = v.findViewById(R.id.et_register_nisn);
         final EditText etTtl = v.findViewById(R.id.et_register_ttl);
         final EditText etAddress = v.findViewById(R.id.et_register_address);
-        final EditText etJurusan = v.findViewById(R.id.et_register_jurusan);
+        final Spinner spinJurusan = v.findViewById(R.id.spin_jurusan);
         final RadioButton rbMale = v.findViewById(R.id.rb_male);
         final RadioButton rbFemale = v.findViewById(R.id.rb_female);
-        final Spinner spinner =  v.findViewById(R.id.spin_graduate);
+        final Spinner spinGraduate =  v.findViewById(R.id.spin_graduate);
         Button btnRegister = v.findViewById(R.id.btnRegister);
 
 
         //array spinner tahun kelulusan
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.graduate_year, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinGraduate.setAdapter(adapter);
+        spinGraduate.setOnItemSelectedListener(this);
+
+        //array spinner tahun kelulusan
+        ArrayAdapter<CharSequence> adapterJurusan = ArrayAdapter.createFromResource(getActivity(), R.array.array_jurusan, android.R.layout.simple_spinner_item);
+        adapterJurusan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinJurusan.setAdapter(adapterJurusan);
+        spinJurusan.setOnItemSelectedListener(this);
+
+
         //register
         databaseReference = FirebaseDatabase.getInstance().getReference("User");
         firebaseAuth = firebaseAuth.getInstance();
@@ -83,8 +91,8 @@ public class RegisterFragment extends Fragment implements AdapterView.OnItemSele
                 final String nisn = etNisn.getText().toString();
                 final String ttl = etTtl.getText().toString();
                 final String address = etAddress.getText().toString();
-                final String jurusan = etJurusan.getText().toString();
-                final String graduate = spinner.getSelectedItem().toString();
+                final String jurusan = spinJurusan.getSelectedItem().toString();
+                final String graduate = spinGraduate.getSelectedItem().toString();
 
                 if (rbMale.isChecked()){
                     jk = "Laki-Laki";

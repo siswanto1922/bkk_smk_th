@@ -182,21 +182,19 @@
                             android:hint="Alamat"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/jurusan"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/label_jurusan"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/address"
-                        android:focusable="true"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_marginTop="16dp"
-                        android:focusableInTouchMode="true">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_register_jurusan"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Jurusan"/>
-                    </com.google.android.material.textfield.TextInputLayout>
+                        android:text="Jurusan"
+                        android:textColor="#000"
+                        android:layout_below="@id/address"
+                        android:fontFamily="@font/quicksandbold"/>
+                    <Spinner
+                        android:id="@+id/spin_jurusan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/label_jurusan"/>
 
                     <!--   Thn lulus     -->
                     <TextView
@@ -205,7 +203,7 @@
                         android:layout_height="wrap_content"
                         android:text="Tahun Kelulusan"
                         android:textColor="#000"
-                        android:layout_below="@id/jurusan"
+                        android:layout_below="@id/spin_jurusan"
                         android:fontFamily="@font/quicksandbold"/>
                     <Spinner
                         android:id="@+id/spin_graduate"

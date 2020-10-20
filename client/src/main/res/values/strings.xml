@@ -19,4 +19,16 @@
         <item>2029</item>
         <item>2030</item>
     </string-array>
+
+    <string-array name="array_jurusan">
+        <item>Teknik Komputer dan Jaringan</item>
+        <item>Teknik Permesinan</item>
+        <item>Teknik Otomasi Industri</item>
+        <item>Teknik Instalasi Tenaga Listrik</item>
+        <item>Broadcasting</item>
+        <item>Multimedia</item>
+        <item>Teknik Kendaraan Ringan</item>
+        <item>Analisis Pengujian Laboratorium</item>
+        <item>Teknik Pengelasan</item>
+    </string-array>
 </resources>
