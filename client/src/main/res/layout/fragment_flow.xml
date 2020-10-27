@@ -5,26 +5,49 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.FlowFragment">
 
-    <!--header-->
-    <RelativeLayout
-        android:id="@+id/header"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:src="@drawable/bg_toolbar"
-            android:tint="@color/colorPrimaryDark"
-            tools:targetApi="lollipop"
-            android:padding="-100dp"/>
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alur Pendaftaran"
-            android:layout_centerInParent="true"
-            android:textSize="20sp"
-            android:fontFamily="@font/quicksandbold"
-            android:textColor="#FFF"/>
-    </RelativeLayout>
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:src="@drawable/bg_toolbar"
+                android:tint="@color/colorPrimaryDark"
+                tools:targetApi="lollipop"
+                android:padding="-100dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alur Pendaftaran"
+                android:layout_centerInParent="true"
+                android:textSize="20sp"
+                android:fontFamily="@font/quicksandbold"
+                android:textColor="#FFF"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:paddingBottom="40dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lokerFlowRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_loker"/>
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </LinearLayout>
 
 </FrameLayout>

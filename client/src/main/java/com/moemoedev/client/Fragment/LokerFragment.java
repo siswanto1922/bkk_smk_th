@@ -81,9 +81,9 @@ public class LokerFragment extends Fragment implements RecyclerLokerAdapter.OnIt
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 mLoker.clear();
-                for (DataSnapshot teacherSnapshot : dataSnapshot.getChildren()) {
-                    Loker upload = teacherSnapshot.getValue(Loker.class);
-                    upload.setKey(teacherSnapshot.getKey());
+                for (DataSnapshot LokerSnapshot : dataSnapshot.getChildren()) {
+                    Loker upload = LokerSnapshot.getValue(Loker.class);
+                    upload.setKey(LokerSnapshot.getKey());
                     mLoker.add(upload);
                 }
                 mAdapter.notifyDataSetChanged();

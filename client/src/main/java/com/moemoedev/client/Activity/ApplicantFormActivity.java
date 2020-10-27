@@ -17,12 +17,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.moemoedev.client.Model.Applicant;
+import com.moemoedev.client.Model.Loker;
+import com.moemoedev.client.Model.User;
 import com.moemoedev.client.R;
+
+import java.util.List;
 
 public class ApplicantFormActivity extends AppCompatActivity {
 
     TextView titleApplicantForm;
     Button sendLamaran;
+    List<User> users;
     EditText appFormName,appFormEmail,appFormNisn,appFormJk,appFormTtl,appFormJurusan,appFormTb,appFormBb,appFormGraduated,appFormAddress,appFormTelp;
 
     @Override
@@ -89,13 +94,21 @@ public class ApplicantFormActivity extends AppCompatActivity {
                 String jurusan = appFormJurusan.getText().toString();
                 String graduate = appFormGraduated.getText().toString();
                 String telp = appFormTelp.getText().toString();
+                String status =  "Mendaftar";
 
                 String uploadId = getIntent().getStringExtra("keynjing");
                DatabaseReference     mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("loker_uploads").child(uploadId);
-               Applicant applicant = new Applicant(id,nama,email,nisn,jk,ttl,telp,address,jurusan,tb,bb,graduate);
+               Applicant applicant = new Applicant(id,nama,email,nisn,jk,ttl,telp,address,jurusan,tb,bb,graduate,status);
                 mDatabaseRef.child("pelamar").child(id).setValue(applicant);
+
+                enterLoker();
             }
         });
 
+    }
+
+    private void enterLoker() {
+        final User currentUser = users
+        String enterLoker = currentUser.get
     }
 }

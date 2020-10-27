@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +33,7 @@ public class CheckApplicantActivity extends AppCompatActivity {
     private ValueEventListener mDBListener;
     private List<Applicant> mApplicant;
     RecyclerView rvApplicant;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,7 @@ public class CheckApplicantActivity extends AppCompatActivity {
 
         mStorage = FirebaseStorage.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("loker_uploads");
-       DatabaseReference applicant = mDatabaseRef.child(getIntent().getStringExtra("key")).child("pelamar");
+        DatabaseReference applicant = mDatabaseRef.child(getIntent().getStringExtra("key")).child("pelamar");
         mDBListener = applicant.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -58,7 +60,7 @@ public class CheckApplicantActivity extends AppCompatActivity {
                 mProgressBar.setVisibility(View.INVISIBLE);
             }
         });
-        mAdapter = new RecyclerApplicantAdapter (this, mApplicant);
+        mAdapter = new RecyclerApplicantAdapter (this, mApplicant, getIntent().getStringExtra("key"));
         rvApplicant.setAdapter(mAdapter);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         rvApplicant.setLayoutManager(mLayoutManager);

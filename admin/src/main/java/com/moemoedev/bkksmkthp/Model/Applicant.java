@@ -13,11 +13,12 @@ public class Applicant {
     public String tb;
     public String bb;
     public String graduate;
+    public String status;
 
     public Applicant() {
     }
 
-    public Applicant(String id, String name, String email, String nisn, String jk, String ttl, String telp, String address, String jurusan, String tb, String bb, String graduate) {
+    public Applicant(String id, String name, String email, String nisn, String jk, String ttl, String telp, String address, String jurusan, String tb, String bb, String graduate, String status) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -30,6 +31,7 @@ public class Applicant {
         this.tb = tb;
         this.bb = bb;
         this.graduate = graduate;
+        this.status = status;
     }
 
     public String getId() {
@@ -126,5 +128,13 @@ public class Applicant {
 
     public void setGraduate(String graduate) {
         this.graduate = graduate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

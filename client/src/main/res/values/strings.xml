@@ -31,4 +31,13 @@
         <item>Analisis Pengujian Laboratorium</item>
         <item>Teknik Pengelasan</item>
     </string-array>
+
+    <string-array name="array_status">
+        <item>Mendaftar</item>
+        <item>Lulus Tes Tertulis</item>
+        <item>Lulus Ujian Praktek</item>
+        <item>Lulus Wawancara</item>
+        <item>Gagal</item>
+        <item>Diterima Bekerja</item>
+    </string-array>
 </resources>

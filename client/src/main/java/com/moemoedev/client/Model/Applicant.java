@@ -13,8 +13,9 @@ public class Applicant {
     public String tb;
     public String bb;
     public String graduate;
+    public String status;
 
-    public Applicant(String id, String name, String email, String nisn, String jk, String ttl, String telp, String address, String jurusan, String tb, String bb, String graduate) {
+    public Applicant(String id, String name, String email, String nisn, String jk, String ttl, String telp, String address, String jurusan, String tb, String bb, String graduate, String status) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -27,5 +28,110 @@ public class Applicant {
         this.tb = tb;
         this.bb = bb;
         this.graduate = graduate;
+        this.status = status;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNisn() {
+        return nisn;
+    }
+
+    public void setNisn(String nisn) {
+        this.nisn = nisn;
+    }
+
+    public String getJk() {
+        return jk;
+    }
+
+    public void setJk(String jk) {
+        this.jk = jk;
+    }
+
+    public String getTtl() {
+        return ttl;
+    }
+
+    public void setTtl(String ttl) {
+        this.ttl = ttl;
+    }
+
+    public String getTelp() {
+        return telp;
+    }
+
+    public void setTelp(String telp) {
+        this.telp = telp;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getJurusan() {
+        return jurusan;
+    }
+
+    public void setJurusan(String jurusan) {
+        this.jurusan = jurusan;
+    }
+
+    public String getTb() {
+        return tb;
+    }
+
+    public void setTb(String tb) {
+        this.tb = tb;
+    }
+
+    public String getBb() {
+        return bb;
+    }
+
+    public void setBb(String bb) {
+        this.bb = bb;
+    }
+
+    public String getGraduate() {
+        return graduate;
+    }
+
+    public void setGraduate(String graduate) {
+        this.graduate = graduate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
