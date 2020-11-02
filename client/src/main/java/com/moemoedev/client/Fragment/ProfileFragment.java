@@ -78,7 +78,7 @@ public class ProfileFragment extends Fragment {
 
 
                 } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), ""+e, Toast.LENGTH_SHORT);
+                   // Toast.makeText(getApplicationContext(), ""+e, Toast.LENGTH_SHORT);
                 }
 
             }

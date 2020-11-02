@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,19 +22,26 @@ import com.moemoedev.client.Model.Loker;
 import com.moemoedev.client.Model.User;
 import com.moemoedev.client.R;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ApplicantFormActivity extends AppCompatActivity {
 
     TextView titleApplicantForm;
     Button sendLamaran;
     List<User> users;
+    private static final AtomicInteger count = new AtomicInteger(0);
     EditText appFormName,appFormEmail,appFormNisn,appFormJk,appFormTtl,appFormJurusan,appFormTb,appFormBb,appFormGraduated,appFormAddress,appFormTelp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_form);
+
+        noDuplicate();
 
         titleApplicantForm = findViewById(R.id.title_applicant_form);
         sendLamaran = findViewById(R.id.btn_submit_lamaran);
@@ -108,7 +116,48 @@ public class ApplicantFormActivity extends AppCompatActivity {
     }
 
     private void enterLoker() {
-        final User currentUser = users
-        String enterLoker = currentUser.get
+        final HashMap<String, Object> value = new HashMap<>();
+        count.incrementAndGet();
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
+        final DatabaseReference enterLoker = databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child("loker_terdaftar");
+        value.put("lokerID" + count ,getIntent().getStringExtra("keynjing"));
+        enterLoker.updateChildren(value);
+
     }
+
+    public void noDuplicate(){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("loker_uploads");
+        databaseReference.child(getIntent().getStringExtra("keynjing")).child("pelamar").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot applSnapshot : snapshot.getChildren()){
+                    if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(applSnapshot.getKey())){
+                        sendLamaran.setEnabled(false);
+                        sendLamaran.setText("Sudah terdaftar");
+                        sendLamaran.setBackgroundResource(R.drawable.rounded_gray);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void collectApplicant(Map<String, Object> applicant){
+        ArrayList<Long> numberApplicant = new ArrayList<>();
+
+        for (Map.Entry<String, Object> entry : applicant.entrySet()){
+
+            Map singleApplicant =  (Map) entry.getValue();
+            numberApplicant.add((Long) singleApplicant.get(FirebaseAuth.getInstance().getCurrentUser().getUid()));
+        }
+
+        Log.d("TAGG", numberApplicant.toString());
+    }
+
 }
