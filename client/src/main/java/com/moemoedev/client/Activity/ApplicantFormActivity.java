@@ -148,16 +148,4 @@ public class ApplicantFormActivity extends AppCompatActivity {
         });
     }
 
-    public void collectApplicant(Map<String, Object> applicant){
-        ArrayList<Long> numberApplicant = new ArrayList<>();
-
-        for (Map.Entry<String, Object> entry : applicant.entrySet()){
-
-            Map singleApplicant =  (Map) entry.getValue();
-            numberApplicant.add((Long) singleApplicant.get(FirebaseAuth.getInstance().getCurrentUser().getUid()));
-        }
-
-        Log.d("TAGG", numberApplicant.toString());
-    }
-
 }

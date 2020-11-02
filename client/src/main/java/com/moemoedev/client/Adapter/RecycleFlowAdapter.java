@@ -2,10 +2,7 @@ package com.moemoedev.client.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -13,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moemoedev.client.Activity.LokerDetailActivity;
@@ -23,25 +20,25 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class RecyclerLokerAdapter extends RecyclerView.Adapter<RecyclerLokerAdapter.RecyclerViewHolder>{
+public class RecycleFlowAdapter extends RecyclerView.Adapter<RecycleFlowAdapter.RecyclerViewHolder>{
     private Context context;
     private List<Loker> lokers;
     private AdapterView.OnItemClickListener mListener;
 
+    @NonNull
+    @Override
+    public RecycleFlowAdapter.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.item_loker, parent, false);
+        return new RecyclerViewHolder(v);
+    }
 
-    public RecyclerLokerAdapter(Context context, List<Loker> uploads){
+    public RecycleFlowAdapter(Context context, List<Loker> uploads){
         this.context = context;
         lokers = uploads;
     }
 
     @Override
-    public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_loker, parent, false);
-        return new RecyclerViewHolder(v);
-    }
-
-    @Override
-    public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecycleFlowAdapter.RecyclerViewHolder holder, int position) {
         final Loker currentLoker = lokers.get(position);
         holder.industryTextView.setText(currentLoker.getIndustry());
         holder.descriptionTextView.setText(currentLoker.getDescription());
@@ -70,40 +67,18 @@ public class RecyclerLokerAdapter extends RecyclerView.Adapter<RecyclerLokerAdap
     public int getItemCount() {
         return lokers.size();
     }
-    public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, MenuItem.OnMenuItemClickListener {
+
+    public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         public TextView industryTextView,descriptionTextView,deadlineTextView;
         public ImageView industryImageView;
         public RelativeLayout itemLoker;
-        public RecyclerViewHolder(View itemView) {
+        public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             industryTextView =itemView.findViewById ( R.id.tvLokerIndustry);
             descriptionTextView = itemView.findViewById(R.id.tvLokerDescription);
             deadlineTextView = itemView.findViewById(R.id.tvLokerDeadline);
             industryImageView = itemView.findViewById(R.id.bannerLoker);
             itemLoker = itemView.findViewById(R.id.item_loker);
-
-            itemView.setOnClickListener(this);
         }
-        @Override
-        public void onClick(View v) {
-            if (mListener != null) {
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-                }
-            }
-        }
-
-        @Override
-        public boolean onMenuItemClick(MenuItem item) {
-            return false;
-        }
-    }
-    public interface OnItemClickListener {
-        void onItemClick(int position);
-        void onShowItemClick(int position);
-        void onDeleteItemClick(int position);
-    }
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        mListener = (AdapterView.OnItemClickListener) listener;
     }
 }
