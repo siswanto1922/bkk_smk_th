@@ -3,7 +3,7 @@ package com.moemoedev.client.Model;
 public class User {
     public String name,email,pass,nisn,jk,ttl,address,jurusan,graduate;
 
-    public User(String name, String email, String password, String nisn, String ttl, String address, String jurusan, String graduate){
+    public User(String name, String email, String password, String nisn, String ttl, String address){
 
     }
 

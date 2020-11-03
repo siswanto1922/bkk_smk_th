@@ -26,6 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.moemoedev.client.Activity.AuthActivity;
+import com.moemoedev.client.EditProfileActivity;
 import com.moemoedev.client.R;
 
 import java.util.Objects;
@@ -108,6 +109,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 Snackbar.make(view, "Anda Sedang Edit profil", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                startActivity(new Intent(getActivity(), EditProfileActivity.class));
             }
         });
 

@@ -1,5 +1,6 @@
 package com.moemoedev.bkksmkthp.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,7 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.moemoedev.bkksmkthp.R;
 import com.squareup.picasso.Picasso;
 
@@ -17,6 +25,9 @@ public class DetailLokerActivity extends AppCompatActivity {
     TextView detailIndustry, detailDesc, detailDeadline;
     ImageView bannerLoker;
     Button detailCheckApplicant;
+    Button delete;
+    DatabaseReference DBkoneksi;
+    private String IDloker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +39,10 @@ public class DetailLokerActivity extends AppCompatActivity {
         detailDeadline = findViewById(R.id.detailActivity_deadline);
         detailCheckApplicant = findViewById(R.id.btn_checkApplicant);
         bannerLoker = findViewById(R.id.bannerLoker);
+        delete = findViewById(R.id.btn_delete);
 
+        DBkoneksi = FirebaseDatabase.getInstance().getReference("loker_uploads");
+        IDloker = getIntent().getExtras().getString("key");
         detailIndustry.setText(getIntent().getStringExtra("industry"));
         detailDesc.setText(getIntent().getStringExtra("desc"));
         detailDeadline.setText(getIntent().getStringExtra("deadline"));
@@ -48,6 +62,28 @@ public class DetailLokerActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setDelete();
+            }
+        });
 
+    }
+    private void setDelete (){
+        Query delQuery = DBkoneksi.orderByKey().equalTo(IDloker);
+        delQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                DBkoneksi.child(IDloker).removeValue();
+                startActivity(new Intent(DetailLokerActivity.this,MainActivity.class));
+                Toast.makeText(DetailLokerActivity.this,"Lowongan telah terhapus",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

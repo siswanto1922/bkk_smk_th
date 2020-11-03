@@ -33,16 +33,16 @@ public class RecycleFlowAdapter extends RecyclerView.Adapter<RecycleFlowAdapter.
         return new RecyclerViewHolder(v);
     }
 
-    public RecycleFlowAdapter(Context context, List<Loker> uploads){
+    public RecycleFlowAdapter(Context context, List<Loker> uploads, String status){
         this.context = context;
-       ////// this.status = status;
+        this.status = status;
         lokers = uploads;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecycleFlowAdapter.RecyclerViewHolder holder, int position) {
         final Loker currentLoker = lokers.get(position);
-       // holder.statusTextView.setText(status);
+        holder.statusTextView.setText(status);
         holder.industryTextView.setText(currentLoker.getIndustry());
         holder.deadlineTextView.setText(currentLoker.getDeadline());
         holder.itemFlow.setOnClickListener(new View.OnClickListener() {

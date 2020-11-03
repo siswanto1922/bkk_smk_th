@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,7 +72,8 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
         mProgressBar.setVisibility(View.VISIBLE);
 
         mLoker = new ArrayList<>();
-        mAdapter = new RecycleFlowAdapter (getActivity(), mLoker);
+        status = "tes";
+        mAdapter = new RecycleFlowAdapter (getActivity(), mLoker, status);
         mRecyclerView.setAdapter(mAdapter);
 
         mStorage = FirebaseStorage.getInstance();
@@ -113,17 +115,16 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     for (DataSnapshot LokerSnapshot : snapshot.getChildren()) {
                                         String url = snapshot.getRef().toString();
-                                        Toast.makeText(getActivity(), LokerSnapshot.child("status").getValue().toString(), Toast.LENGTH_SHORT).show();
                                         status = LokerSnapshot.child("status").getValue().toString();
                                         String[] seperate = url.split("/");
-
                                         databaseReference.child(seperate[4]).addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                 Loker upload = snapshot.getValue(Loker.class);
-                                                Toast.makeText(getActivity(), upload.toString(), Toast.LENGTH_SHORT).show();
                                                 upload.setKey(snapshot.getKey());
                                                 mLoker.add(upload);
+                                                mAdapter.notifyDataSetChanged();
+                                                mProgressBar.setVisibility(View.GONE);
                                             }
 
                                             @Override
@@ -132,8 +133,7 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
                                             }
                                         });
                                     }
-                                    mAdapter.notifyDataSetChanged();
-                                    mProgressBar.setVisibility(View.GONE);
+
                                 }
 
                                 @Override
