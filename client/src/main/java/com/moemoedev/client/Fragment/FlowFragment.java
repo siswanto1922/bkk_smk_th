@@ -43,6 +43,7 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
     private DatabaseReference mDatabaseRef;
     private ValueEventListener mDBListener;
     private List<Loker> mLoker;
+    private String status;
 
     private void openDetailActivity(String[] data){
         Intent intent = new Intent(getActivity(), LokerDetailActivity.class);
@@ -72,30 +73,10 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
         mLoker = new ArrayList<>();
         mAdapter = new RecycleFlowAdapter (getActivity(), mLoker);
         mRecyclerView.setAdapter(mAdapter);
-//        mAdapter.setOnItemClickListener(getContext());
 
         mStorage = FirebaseStorage.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("loker_uploads");
         noDuplicate();
-//        mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                mLoker.clear();
-//                for (DataSnapshot LokerSnapshot : dataSnapshot.getChildren()) {
-//                    Loker upload = LokerSnapshot.getValue(Loker.class);
-//                    upload.setKey(LokerSnapshot.getKey());
-//                    mLoker.add(upload);
-//                }
-//                mAdapter.notifyDataSetChanged();
-//                mProgressBar.setVisibility(View.GONE);
-//            }
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                Toast.makeText(getActivity(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-//                mProgressBar.setVisibility(View.INVISIBLE);
-//            }
-//        });
-
         return v;
     }
 
@@ -132,13 +113,15 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     for (DataSnapshot LokerSnapshot : snapshot.getChildren()) {
                                         String url = snapshot.getRef().toString();
+                                        Toast.makeText(getActivity(), LokerSnapshot.child("status").getValue().toString(), Toast.LENGTH_SHORT).show();
+                                        status = LokerSnapshot.child("status").getValue().toString();
                                         String[] seperate = url.split("/");
 
                                         databaseReference.child(seperate[4]).addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                 Loker upload = snapshot.getValue(Loker.class);
-                                                Toast.makeText(getContext(), snapshot.getKey(), Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getActivity(), upload.toString(), Toast.LENGTH_SHORT).show();
                                                 upload.setKey(snapshot.getKey());
                                                 mLoker.add(upload);
                                             }

@@ -22,34 +22,35 @@ import java.util.List;
 
 public class RecycleFlowAdapter extends RecyclerView.Adapter<RecycleFlowAdapter.RecyclerViewHolder>{
     private Context context;
+    private String status;
     private List<Loker> lokers;
     private AdapterView.OnItemClickListener mListener;
 
     @NonNull
     @Override
     public RecycleFlowAdapter.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_loker, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_flow, parent, false);
         return new RecyclerViewHolder(v);
     }
 
     public RecycleFlowAdapter(Context context, List<Loker> uploads){
         this.context = context;
+       ////// this.status = status;
         lokers = uploads;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecycleFlowAdapter.RecyclerViewHolder holder, int position) {
         final Loker currentLoker = lokers.get(position);
+       // holder.statusTextView.setText(status);
         holder.industryTextView.setText(currentLoker.getIndustry());
-        holder.descriptionTextView.setText(currentLoker.getDescription());
         holder.deadlineTextView.setText(currentLoker.getDeadline());
-        holder.itemLoker.setOnClickListener(new View.OnClickListener() {
+        holder.itemFlow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, LokerDetailActivity.class);
                 i.putExtra("key",currentLoker.getKey());
                 i.putExtra("industry", currentLoker.getIndustry());
-                i.putExtra("desc", currentLoker.getDescription());
                 i.putExtra("deadline", currentLoker.getDeadline());
                 i.putExtra("imgUrl",currentLoker.getImageURL());
                 context.startActivity(i);
@@ -69,16 +70,16 @@ public class RecycleFlowAdapter extends RecyclerView.Adapter<RecycleFlowAdapter.
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        public TextView industryTextView,descriptionTextView,deadlineTextView;
+        public TextView industryTextView,statusTextView,deadlineTextView;
         public ImageView industryImageView;
-        public RelativeLayout itemLoker;
+        public RelativeLayout itemFlow;
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-            industryTextView =itemView.findViewById ( R.id.tvLokerIndustry);
-            descriptionTextView = itemView.findViewById(R.id.tvLokerDescription);
-            deadlineTextView = itemView.findViewById(R.id.tvLokerDeadline);
-            industryImageView = itemView.findViewById(R.id.bannerLoker);
-            itemLoker = itemView.findViewById(R.id.item_loker);
+            statusTextView = itemView.findViewById(R.id.tvFlowStatus);
+            industryTextView =itemView.findViewById ( R.id.tvFlowIndustry);
+            deadlineTextView = itemView.findViewById(R.id.tvFlowDeadline);
+            industryImageView = itemView.findViewById(R.id.bannerFlow);
+            itemFlow = itemView.findViewById(R.id.item_flow);
         }
     }
 }
