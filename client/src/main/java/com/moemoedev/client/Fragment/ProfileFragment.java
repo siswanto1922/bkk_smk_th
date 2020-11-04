@@ -2,20 +2,16 @@ package com.moemoedev.client.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.solver.widgets.Snapshot;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -26,15 +22,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.moemoedev.client.Activity.AuthActivity;
-import com.moemoedev.client.EditProfileActivity;
+import com.moemoedev.client.Activity.EditProfileActivity;
 import com.moemoedev.client.R;
 
 import java.util.Objects;
-
-import de.hdodenhof.circleimageview.CircleImageView;
-
-import static android.content.Context.MODE_PRIVATE;
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 
 /**
@@ -103,8 +94,8 @@ public class ProfileFragment extends Fragment {
                 startActivity(new Intent(getActivity(), AuthActivity.class));
             }
         });
-        FloatingActionButton fab = v.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton gotoEdit = v.findViewById(R.id.fab);
+        gotoEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Anda Sedang Edit profil", Snackbar.LENGTH_LONG)

@@ -13,17 +13,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.moemoedev.client.Activity.FlowDetailActivity;
 import com.moemoedev.client.Activity.LokerDetailActivity;
 import com.moemoedev.client.Model.Loker;
 import com.moemoedev.client.R;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecycleFlowAdapter extends RecyclerView.Adapter<RecycleFlowAdapter.RecyclerViewHolder>{
     private Context context;
-    private String status;
     private List<Loker> lokers;
+
     private AdapterView.OnItemClickListener mListener;
 
     @NonNull
@@ -33,22 +35,20 @@ public class RecycleFlowAdapter extends RecyclerView.Adapter<RecycleFlowAdapter.
         return new RecyclerViewHolder(v);
     }
 
-    public RecycleFlowAdapter(Context context, List<Loker> uploads, String status){
+    public RecycleFlowAdapter(Context context, List<Loker> uploads, List<String> status){
         this.context = context;
-        this.status = status;
         lokers = uploads;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecycleFlowAdapter.RecyclerViewHolder holder, int position) {
         final Loker currentLoker = lokers.get(position);
-        holder.statusTextView.setText(status);
         holder.industryTextView.setText(currentLoker.getIndustry());
         holder.deadlineTextView.setText(currentLoker.getDeadline());
         holder.itemFlow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, LokerDetailActivity.class);
+                Intent i = new Intent(context, FlowDetailActivity.class);
                 i.putExtra("key",currentLoker.getKey());
                 i.putExtra("industry", currentLoker.getIndustry());
                 i.putExtra("deadline", currentLoker.getDeadline());
@@ -75,7 +75,6 @@ public class RecycleFlowAdapter extends RecyclerView.Adapter<RecycleFlowAdapter.
         public RelativeLayout itemFlow;
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-            statusTextView = itemView.findViewById(R.id.tvFlowStatus);
             industryTextView =itemView.findViewById ( R.id.tvFlowIndustry);
             deadlineTextView = itemView.findViewById(R.id.tvFlowDeadline);
             industryImageView = itemView.findViewById(R.id.bannerFlow);

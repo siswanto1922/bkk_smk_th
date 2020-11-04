@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="200dp"
+    android:layout_height="150dp"
     android:layout_marginBottom="16dp"
     android:id="@+id/item_flow">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="165dp"
+        android:layout_height="120dp"
         android:layout_alignParentBottom="true"
         app:cardCornerRadius="15dp">
         <LinearLayout
@@ -25,33 +25,24 @@
                 android:text="PT. Mencari Cinta Sejati"
                 android:textColor="#000"
                 android:textSize="19sp"/>
-            <TextView
-                android:id="@+id/tvFlowDeadline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="13-10-2020"
-                android:fontFamily="@font/quicksandbold"
-                android:textColor="#000"
-                android:drawableStart="@drawable/ic_access_time_black_24dp"
-                android:drawablePadding="5dp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="30dp">
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@drawable/rounded_red"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="5dp"/>
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_blue">
                 <TextView
-                    android:id="@+id/tvFlowStatus"
+                    android:id="@+id/tvFlowDeadline"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    android:text="Gagal"
-                    android:fontFamily="@font/quicksandmedium"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_height="wrap_content"
+                    android:text="13-10-2020"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/quicksandbold"
+                    android:textColor="#fff"
+                    android:drawableTint="#fff"
+                    android:drawableStart="@drawable/ic_access_time_black_24dp"
+                    android:drawablePadding="5dp"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -62,6 +53,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="25dp"
         app:cardCornerRadius="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp">
         <ImageView
             android:id="@+id/bannerFlow"

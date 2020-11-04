@@ -1,37 +1,27 @@
-package com.moemoedev.client;
+package com.moemoedev.client.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.AutofillService;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthMultiFactorException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.moemoedev.client.Activity.MainActivity;
-import com.moemoedev.client.Fragment.ProfileFragment;
 import com.moemoedev.client.Model.User;
 import com.moemoedev.client.R;
 
 import java.util.HashMap;
 import java.util.Objects;
-
-import static android.content.ContentValues.TAG;
 
 public class EditProfileActivity extends AppCompatActivity {
     TextInputEditText edtNama, edtNis, edtEmail, edtTtl, edtPass, edtAlamat;

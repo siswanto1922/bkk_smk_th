@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.moemoedev.client.Activity.FlowDetailActivity;
 import com.moemoedev.client.Activity.LokerDetailActivity;
 import com.moemoedev.client.Adapter.RecycleFlowAdapter;
 import com.moemoedev.client.Adapter.RecyclerLokerAdapter;
@@ -44,10 +45,10 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
     private DatabaseReference mDatabaseRef;
     private ValueEventListener mDBListener;
     private List<Loker> mLoker;
-    private String status;
+    private List<String> status;
 
     private void openDetailActivity(String[] data){
-        Intent intent = new Intent(getActivity(), LokerDetailActivity.class);
+        Intent intent = new Intent(getActivity(), FlowDetailActivity.class);
         intent.putExtra("NAME_KEY",data[0]);
         intent.putExtra("DESCRIPTION_KEY",data[1]);
         intent.putExtra("IMAGE_KEY",data[2]);
@@ -72,9 +73,39 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
         mProgressBar.setVisibility(View.VISIBLE);
 
         mLoker = new ArrayList<>();
-        status = "tes";
-        mAdapter = new RecycleFlowAdapter (getActivity(), mLoker, status);
-        mRecyclerView.setAdapter(mAdapter);
+
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("loker_uploads");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    databaseReference.child(dataSnapshot.getKey())
+                            .child("pelamar").orderByKey().equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for (DataSnapshot LokerSnapshot : snapshot.getChildren()) {
+                                        String status1 = LokerSnapshot.child("status").getValue().toString();
+                                        mAdapter = new RecycleFlowAdapter (getActivity(), mLoker, status);
+                                        mRecyclerView.setAdapter(mAdapter);
+                                    }
+
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         mStorage = FirebaseStorage.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("loker_uploads");
@@ -115,7 +146,7 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     for (DataSnapshot LokerSnapshot : snapshot.getChildren()) {
                                         String url = snapshot.getRef().toString();
-                                        status = LokerSnapshot.child("status").getValue().toString();
+                                        //status = LokerSnapshot.child("status").getValue().toString();
                                         String[] seperate = url.split("/");
                                         databaseReference.child(seperate[4]).addValueEventListener(new ValueEventListener() {
                                             @Override

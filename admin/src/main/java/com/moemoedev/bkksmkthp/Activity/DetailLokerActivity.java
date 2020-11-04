@@ -1,6 +1,7 @@
 package com.moemoedev.bkksmkthp.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -65,10 +66,29 @@ public class DetailLokerActivity extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setDelete();
-            }
-        });
 
+                final AlertDialog dialog = new AlertDialog.Builder(DetailLokerActivity.this)
+                        .setTitle("Menghapus Lowongan")
+                        .setMessage("Apakah anda yakin ingin menghapusnya?")
+                        .setPositiveButton("Iya", null)
+                        .setNegativeButton("Tidak", null)
+                        .show();
+                Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                positiveButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        setDelete();
+                    }
+                });
+                Button negative = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+                negative.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(DetailLokerActivity.this, "Anda belum Menghapusnya",
+                                Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                });
     }
     private void setDelete (){
         Query delQuery = DBkoneksi.orderByKey().equalTo(IDloker);
@@ -83,6 +103,8 @@ public class DetailLokerActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
             }
         });
     }

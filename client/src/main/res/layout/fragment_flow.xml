@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1F0EC"
     tools:context=".Fragment.FlowFragment">
 
     <LinearLayout
@@ -15,33 +17,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:src="@drawable/bg_toolbar"
-                android:tint="@color/colorPrimaryDark"
-                tools:targetApi="lollipop"
-                android:padding="-100dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alur Pendaftaran"
-                android:layout_centerInParent="true"
-                android:textSize="20sp"
-                android:fontFamily="@font/quicksandbold"
-                android:textColor="#FFF"/>
+                android:layout_margin="10dp"
+                android:textSize="35sp"
+                android:fontFamily="@font/soraextrabold"
+                android:textColor="#000"/>
+            <SearchView
+                android:id="@+id/search_flow"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="13dp"
+                android:background="@drawable/rounded_gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingEnd="20dp"
-            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
             android:paddingBottom="40dp">
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/lokerFlowRecycler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/item_loker"/>
+                tools:listitem="@layout/item_flow"/>
             <ProgressBar
                 android:id="@+id/progressbar"
                 android:layout_width="wrap_content"

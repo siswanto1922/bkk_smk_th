@@ -4,224 +4,324 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.ProfileFragment">
+    tools:context=".Fragment.ProfileFragment"
+    android:background="#F1F0EC">
+    <!--header-->
     <RelativeLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <!--header-->
-        <RelativeLayout
-            android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:src="@drawable/bg_toolbar"
-                tools:targetApi="lollipop"
-                android:padding="-100dp"
-                app:tint="@color/colorPrimaryDark" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:layout_centerInParent="true"
-                android:textSize="20sp"
-                android:fontFamily="@font/quicksandbold"
-                android:textColor="#FFF"/>
-        </RelativeLayout>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:padding="20dp">
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:src="@drawable/ic_edit_black_24dp"
-            android:layout_margin="16dp"
-            android:tint="#fff"/>
-
-        <ScrollView
+            android:text="Profile"
+            android:fontFamily="@font/soraextrabold"
+            android:textSize="40dp"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:textColor="#000"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:background="#83FFFFFF"
                 android:orientation="vertical"
-                android:padding="20dp">
-
-                <TextView
-                    android:id="@+id/nama"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="90dp"
-                    android:fontFamily="@font/quicksandbold"
-                    android:text="Nama"
-                    android:textColor="#000"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/isinama"
+                android:padding="10dp">
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/nama"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/quicksandregular"
-                    android:hint="user name"
-                    android:textColor="#000" />
+                    app:cardCornerRadius="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="5dp"
+                        android:layout_margin="5dp">
 
-                <TextView
-                    android:id="@+id/nisn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:fontFamily="@font/quicksandbold"
-                    android:text="NISN"
-                    android:textColor="#000"
-                    android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/nama"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableLeft="@drawable/ic_person_black_24dp"
+                            android:drawablePadding="5dp"
+                            android:fontFamily="@font/quicksandbold"
+                            android:text="Nama"
+                            android:textColor="#000"
+                            android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/isinisn"
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/isinama"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/nama"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/quicksandregular"
+                            android:hint="user name"
+                            android:textColor="#000"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/nisn"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/quicksandregular"
-                    android:hint="nisn"
-                    android:textColor="#000" />
+                    app:cardCornerRadius="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="5dp"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:drawablePadding="5dp"
+                            android:drawableLeft="@drawable/ic_people_black_24dp"
+                            android:id="@+id/nisn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksandbold"
+                            android:text="NISN"
+                            android:textColor="#000"
+                            android:textSize="20sp" />
 
-
-                <TextView
-                    android:id="@+id/jk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="7dp"
-                    android:fontFamily="@font/quicksandbold"
-                    android:text="Jenis Kelamin"
-                    android:textSize="20sp"
-                    android:textColor="#000"/>
-
-                <TextView
-                    android:id="@+id/isijk"
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:textSize="16dp"
+                            android:id="@+id/isinisn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/nisn"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/quicksandregular"
+                            android:hint="nisn"
+                            android:textColor="#000" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/jk"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/quicksandregular"
-                    android:hint="L/P"
-                    android:textColor="#000"/>
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="5dp"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:drawablePadding="5dp"
+                            android:drawableLeft="@drawable/ic_wc_black_24dp"
+                            android:id="@+id/jk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/quicksandbold"
+                            android:text="Jenis Kelamin"
+                            android:textSize="20sp"
+                            android:textColor="#000"/>
 
-                <TextView
-                    android:id="@+id/tgl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="7dp"
-                    android:fontFamily="@font/quicksandbold"
-                    android:text="Tempat, tanggal lahir"
-                    android:textSize="20sp"
-                    android:textColor="#000"/>
 
-                <TextView
-                    android:id="@+id/isitgl"
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/isijk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/jk"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/quicksandregular"
+                            android:hint="L/P"
+                            android:textColor="#000"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tgl"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/quicksandregular"
-                    android:hint="Pati, 18 Agustus 2003"
-                    android:textColor="#000" />
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="5dp"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:drawablePadding="5dp"
+                            android:drawableLeft="@drawable/ic_cake_black_24dp"
+                            android:id="@+id/tgl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/quicksandbold"
+                            android:text="Tempat, tanggal lahir"
+                            android:textSize="20sp"
+                            android:textColor="#000"/>
 
-                <TextView
-                    android:id="@+id/jurusan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="7dp"
-                    android:fontFamily="@font/quicksandbold"
-                    android:text="Jurusan"
-                    android:textSize="20sp"
-                    android:textColor="#000"/>
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/isitgl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tgl"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/quicksandregular"
+                            android:hint="Pati, 18 Agustus 2003"
+                            android:textColor="#000"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/isijurusan"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/jurusan"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/quicksandregular"
-                    android:hint="Jurusan"
-                    android:textColor="#000"/>
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="5dp"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:drawablePadding="5dp"
+                            android:drawableLeft="@drawable/ic_school_black_24dp"
+                            android:id="@+id/jurusan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/quicksandbold"
+                            android:text="Jurusan"
+                            android:textSize="20sp"
+                            android:textColor="#000"/>
 
-                <TextView
-                    android:id="@+id/tk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="7dp"
-                    android:fontFamily="@font/quicksandbold"
-                    android:text="Tahun Kelulusan"
-                    android:textSize="20sp"
-                    android:textColor="#000" />
+                        <TextView
+                            android:id="@+id/isijurusan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/jurusan"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/quicksandregular"
+                            android:hint="Jurusan"
+                            android:textColor="#000"
+                            android:layout_marginTop="5dp"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/isitk"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tk"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/quicksandregular"
-                    android:hint="graduate"
-                    android:textColor="#000"/>
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="5dp"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:drawablePadding="5dp"
+                            android:drawableLeft="@drawable/ic_date_range_black_24dp"
+                            android:id="@+id/tk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/quicksandbold"
+                            android:text="Tahun Kelulusan"
+                            android:textSize="20sp"
+                            android:textColor="#000" />
 
-                <TextView
-                    android:id="@+id/alamat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="7dp"
-                    android:fontFamily="@font/quicksandbold"
-                    android:text="Alamat"
-                    android:textSize="20sp"
-                    android:textColor="#000"/>
+                        <TextView
+                            android:id="@+id/isitk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tk"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/quicksandregular"
+                            android:hint="graduate"
+                            android:textColor="#000"
+                            android:layout_marginTop="5dp"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/isialamat"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/alamat"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/quicksandregular"
-                    android:hint="Ds....."
-                    android:textColor="#000"/>
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="5dp"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:drawablePadding="5dp"
+                            android:drawableLeft="@drawable/ic_place_black_24dp"
+                            android:id="@+id/alamat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="7dp"
+                            android:fontFamily="@font/quicksandbold"
+                            android:text="Alamat"
+                            android:textSize="20sp"
+                            android:textColor="#000"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    android:padding="20dp">
-
+                        <TextView
+                            android:id="@+id/isialamat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/alamat"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/quicksandregular"
+                            android:hint="Ds....."
+                            android:textColor="#000"
+                            android:layout_marginTop="5dp"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
                     <Button
+                        android:drawableTint="#fff"
+                        android:padding="10dp"
+                        android:layout_marginTop="30dp"
+                        android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
                         android:id="@+id/btnLogout"
                         android:layout_width="120dp"
                         android:layout_height="40dp"
                         android:textColor="#fff"
+                        android:layout_gravity="center_horizontal"
                         android:background="@drawable/rounded_gold"
                         android:fontFamily="@font/quicksandbold"
                         android:text="Logout" />
-
-                </LinearLayout>
             </LinearLayout>
-        </ScrollView>
-    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:src="@drawable/ic_edit_black_24dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_gold"
+        android:tint="#fff"/>
 </FrameLayout>
