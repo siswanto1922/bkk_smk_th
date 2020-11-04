@@ -25,14 +25,6 @@
                 android:textSize="35sp"
                 android:fontFamily="@font/soraextrabold"
                 android:textColor="#000"/>
-            <SearchView
-                android:id="@+id/search_flow"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="13dp"
-                android:background="@drawable/rounded_gold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
