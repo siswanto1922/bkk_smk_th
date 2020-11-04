@@ -63,9 +63,9 @@ public class FlowFragment extends Fragment implements RecyclerLokerAdapter.OnIte
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_loker, container, false);
+        View v = inflater.inflate(R.layout.fragment_flow, container, false);
 
-        mRecyclerView = v.findViewById(R.id.lokerRecycler);
+        mRecyclerView = v.findViewById(R.id.lokerFlowRecycler);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 

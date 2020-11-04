@@ -7,16 +7,17 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.moemoedev.bkksmkthp.Fragment.AnnouncementFragment;
 import com.moemoedev.bkksmkthp.Fragment.LokerFragment;
+import com.moemoedev.bkksmkthp.Fragment.Statistic_Fragmet;
 import com.moemoedev.bkksmkthp.R;
 
 public class MainActivity extends AppCompatActivity {
 
     MeowBottomNavigation meo;
     private final static int ID_LOKER=1;
-    private final static int ID_DATA=2;
-    private final static int ID_USER=3;
-    private Button btnToUpload;
+    private final static int ID_ANNOUNCEMENT=2;
+    private final static int ID_SATISTIC=3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         meo = findViewById(R.id.bottom_nav);
         meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_event_note_black_24dp));
-        meo.add(new MeowBottomNavigation.Model(2,R.drawable.ic_assessment_black_24dp));
-        meo.add(new MeowBottomNavigation.Model(3,R.drawable.ic_people_black_24dp));
+        meo.add(new MeowBottomNavigation.Model(2,R.drawable.ic_announcement_black_24dp));
+        meo.add(new MeowBottomNavigation.Model(3,R.drawable.ic_assessment_black_24dp));
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new LokerFragment()).commit();
         meo.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
@@ -42,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getId()){
                     case ID_LOKER :
                         select_fragment=new LokerFragment();
+                        break;
+                    case ID_ANNOUNCEMENT :
+                        select_fragment=new AnnouncementFragment();
+                        break;
+                    case ID_SATISTIC :
+                        select_fragment=new Statistic_Fragmet();
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, select_fragment).commit();

@@ -1,12 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.FlowDetailActivity">
+    tools:context=".Activity.FlowDetailActivity"
+    android:padding="16dp"
+    android:background="#f1f1f1">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        android:id="@+id/cvBanner">
+        <ImageView
+            android:id="@+id/bannerFlow"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="#BDBDBD"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/flowdetailActivity_industry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cvBanner"
+        android:text="PT. Mencari Cinta Sejati"
+        android:textSize="20sp"
+        android:fontFamily="@font/quicksandbold"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/flowdetailActivity_deadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flowdetailActivity_industry"
+        android:drawableStart="@drawable/ic_access_time_black_24dp"
+        android:text="12 Januari 2021"
+        android:textColor="#000"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="viewEnd"
+        android:layout_marginTop="5dp"/>
 
     <LinearLayout
+        android:id="@+id/layout_status"
+        android:layout_below="@id/flowdetailActivity_industry"
         android:layout_width="wrap_content"
         android:layout_height="30dp">
         <ImageView
@@ -27,4 +67,12 @@
             android:layout_gravity="center_vertical"/>
     </LinearLayout>
 
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:id="@+id/rv_item_announcement"
+        tools:listitem="@layout/item_announcement"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/layout_status"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

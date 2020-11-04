@@ -52,9 +52,9 @@ public class FlowDetailActivity extends AppCompatActivity {
     }
 
     private void changeIVstatus() {
-        if (tvStatus.getText() == "Gagal") {
+        if (tvStatus.getText().equals("Gagal")) {
             ivStatus.setImageResource(R.drawable.rounded_red);
-        } if (tvStatus.getText() == "Diterima Bekerja"){
+        } if (tvStatus.getText().equals("Diterima Bekerja")){
             ivStatus.setImageResource(R.drawable.rounded_green);
         } else {
             ivStatus.setImageResource(R.drawable.rounded_gold);
