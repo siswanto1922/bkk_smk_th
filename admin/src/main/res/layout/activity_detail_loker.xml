@@ -4,68 +4,117 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.DetailLokerActivity"
-    android:padding="16dp">
+    android:background="#F1F0EC"
+    android:padding="13dp"
+    tools:context=".Activity.DetailLokerActivity">
 
-    <androidx.cardview.widget.CardView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="15dp"
-        android:id="@+id/cvBanner">
-        <ImageView
-            android:id="@+id/bannerLoker"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="120dp">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="#BDBDBD"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/detailActivity_industry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cvBanner"
-        android:text="PT. Mencari Cinta Sejati"
-        android:textSize="20sp"
-        android:fontFamily="@font/quicksandbold"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:layout_marginTop="10dp"/>
-    <TextView
-        android:id="@+id/detailActivity_deadline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detailActivity_industry"
-        android:drawableStart="@drawable/ic_access_time_black_24dp"
-        android:text="12 Januari 2021"
-        android:textColor="#000"
-        android:layout_alignParentEnd="true"
-        android:textAlignment="viewEnd"
-        android:layout_marginTop="5dp"/>
+            <LinearLayout
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/detailActivity_desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/detailActivity_deadline"
-        android:text="@string/lorem"
-        android:layout_marginTop="5dp"/>
+                <TextView
+                    android:id="@+id/detailActivity_industry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/soraextrabold"
+                    android:text="PT. Mencari Cinta Sejati"
+                    android:textAlignment="textStart"
+                    android:textColor="#000"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textTitle"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/bannerLoker"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="#BDBDBD" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+                    <TextView
+                        android:id="@+id/detailActivity_deadline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:drawableStart="@drawable/ic_timer_off_black_24dp"
+                        android:drawablePadding="5dp"
+                        android:paddingEnd="10dp"
+                        android:text="12 Januari 2021"
+                        android:textColor="#fff"
+                        android:drawableTint="#fff"
+                        android:padding="3dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/rounded_blue"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+
+                android:id="@+id/detailActivity_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cvBanner"
+                android:layout_marginTop="10dp"
+                android:text="@string/lorem" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
     <Button
         android:id="@+id/btn_checkApplicant"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lihat Pelamar"
-        android:background="@drawable/rounded_gold"
         android:layout_above="@+id/btn_delete"
         android:layout_marginBottom="10dp"
-        android:textColor="#FFF"/>
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/rounded_gold"
+        android:text="Lihat Pelamar"
+        android:drawableLeft="@drawable/ic_people_black_24dp"
+        android:drawableTint="#FFF"
+        android:drawablePadding="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="viewStart"
+        android:textColor="#FFF" />
+
     <Button
         android:id="@+id/btn_delete"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hapus Lowongan"
-        android:background="@drawable/rounded_gold"
+        android:drawableLeft="@drawable/ic_delete_black_24dp"
+        android:drawableTint="#FFF"
+        android:layout_alignParentEnd="true"
+        android:drawablePadding="10dp"
         android:layout_alignParentBottom="true"
-        android:textColor="#FFF"/>
+        android:background="@drawable/rounded_red"
+        android:text="Hapus Lowongan"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="viewStart"
+        android:textColor="#FFF" />
 
 </RelativeLayout>

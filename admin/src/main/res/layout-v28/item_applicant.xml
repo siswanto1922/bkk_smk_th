@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_margin="10dp"
     android:layout_height="wrap_content"
     android:id="@+id/item_applicant"
     style="@style/CardView.Light"
@@ -9,9 +10,10 @@
     android:layout_marginBottom="5dp">
 
     <RelativeLayout
-        android:layout_width="424dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:background="@color/colorPrimaryDark"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/tv_item_applicant_name"
@@ -19,8 +21,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksandbold"
             android:text="User123"
-            android:textColor="#000"
-            android:textSize="16sp" />
+            android:textColor="#fff"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_item_applicant_email"
@@ -28,22 +30,16 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_item_applicant_name"
             android:text="aaaaa@gmail.com"
-            android:textColor="#000"
+            android:textColor="#fff"
             android:textSize="15sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+        <Spinner
+            android:id="@+id/spin_status"
+            android:layout_marginTop="59dp"
+            android:layout_marginEnd="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_item_applicant_email"
-            android:layout_marginTop="5dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true">
+            android:outlineSpotShadowColor="@color/textblack"/>
 
-            <Spinner
-                android:id="@+id/spin_status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
