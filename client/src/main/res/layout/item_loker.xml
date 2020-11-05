@@ -23,6 +23,9 @@
             <TextView
                 android:id="@+id/tvLokerIndustry"
                 android:layout_width="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:maxLength="40"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksandbold"
                 android:text="PT. Mencari Cinta Sejati"
