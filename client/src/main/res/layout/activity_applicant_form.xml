@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#f1f1f1"
-    tools:context=".Activity.ApplicantFormActivity">
+    tools:context=".Activity.ApplicantFormActivity"
+    android:paddingBottom="20dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -68,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/nama"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="15dp"
                     android:layout_marginBottom="10dp"
                     android:focusable="true"
@@ -108,7 +109,7 @@
                     android:layout_marginBottom="10dp"
                     android:focusableInTouchMode="true"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="5dp">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etApplicantForm_email"
                         android:layout_width="match_parent"
@@ -143,7 +144,7 @@
                     android:layout_marginBottom="10dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:focusableInTouchMode="true"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="5dp">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etApplicantForm_nisn"
                         android:layout_width="match_parent"
@@ -179,7 +180,7 @@
                     android:layout_marginBottom="10dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:focusableInTouchMode="true"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="5dp">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etApplicantForm_jk"
                         android:layout_width="match_parent"
@@ -214,7 +215,7 @@
                     android:layout_marginBottom="10dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:focusableInTouchMode="true"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="5dp">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etApplicantForm_ttl"
                         android:layout_width="match_parent"
@@ -250,7 +251,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     android:focusable="true"
                     android:focusableInTouchMode="true">
 
@@ -289,7 +290,7 @@
                     android:layout_marginStart="23dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     android:focusable="true"
                     android:focusableInTouchMode="true">
 
@@ -313,7 +314,7 @@
                     android:id="@+id/tvbb"
                     android:text="Berat Badan"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:textSize="15sp"
                     android:textColor="#000"
                     android:fontFamily="@font/quicksandmedium"/>
@@ -361,7 +362,7 @@
                     android:layout_below="@+id/emailn"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:focusableInTouchMode="true"
                     android:layout_marginTop="16dp">
@@ -396,7 +397,7 @@
                     android:layout_below="@+id/emailn"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:focusableInTouchMode="true"
                     android:layout_marginTop="16dp">
@@ -431,7 +432,7 @@
                     android:layout_below="@+id/emailn"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:focusableInTouchMode="true"
                     android:layout_marginTop="16dp">
@@ -451,12 +452,12 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="30dp"
                 android:layout_alignParentEnd="true"
-                android:layout_margin="10dp"
+                android:layout_marginEnd="30dp"
                 android:textColor="#FFF"
                 android:drawableStart="@drawable/ic_send_black_24dp"
                 android:drawableTint="#FFF"
                 android:paddingStart="15dp"
-                android:paddingEnd="10dp"
+                android:paddingEnd="20dp"
                 android:fontFamily="@font/quicksandbold"
                 android:drawablePadding="5dp"
                 android:background="@drawable/rounded_gold"

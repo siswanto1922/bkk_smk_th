@@ -52,6 +52,7 @@ public class AnnouncementFragment extends Fragment implements RecyclerAnnounceme
         intent.putExtra("NAME_KEY",data[0]);
         intent.putExtra("DESCRIPTION_KEY",data[1]);
         intent.putExtra("IMAGE_KEY",data[2]);
+      //  intent.putExtra("key",.getKey());
         startActivity(intent);
     }
 

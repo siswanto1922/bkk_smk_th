@@ -98,8 +98,7 @@ public class ProfileFragment extends Fragment {
         gotoEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Anda Sedang Edit profil", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, "Anda Sedang Edit profil", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 startActivity(new Intent(getActivity(), EditProfileActivity.class));
             }
         });
