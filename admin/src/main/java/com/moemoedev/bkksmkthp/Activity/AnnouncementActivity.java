@@ -86,9 +86,6 @@ public class AnnouncementActivity extends AppCompatActivity {
         });
 
 
-
-
-
         //get intent
         DBkoneksi = FirebaseDatabase.getInstance().getReference("loker_uploads");
         IDloker = getIntent().getExtras().getString("key");
