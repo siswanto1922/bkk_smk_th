@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ApplicantDetailActivity"></activity>
+        <activity android:name=".Activity.AnnouncementActivity"></activity>
+        <activity android:name=".Activity.AnnouncementUpload" />
+        <activity android:name=".Activity.ApplicantDetailActivity" />
         <activity android:name=".Activity.CheckApplicantActivity" />
         <activity android:name=".Activity.DetailLokerActivity" />
         <activity android:name=".Activity.UploadLokerActivity" />

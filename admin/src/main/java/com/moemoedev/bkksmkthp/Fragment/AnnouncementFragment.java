@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.moemoedev.bkksmkthp.Activity.DetailLokerActivity;
+import com.moemoedev.bkksmkthp.Activity.AnnouncementActivity;
 import com.moemoedev.bkksmkthp.Activity.UploadLokerActivity;
 import com.moemoedev.bkksmkthp.Adapter.RecyclerAnnouncementAdapter;
 import com.moemoedev.bkksmkthp.Adapter.RecyclerLokerAdapter;
@@ -40,15 +40,15 @@ import java.util.List;
 public class AnnouncementFragment extends Fragment implements RecyclerAnnouncementAdapter.OnItemClickListener {
 
     private RecyclerView mRecyclerView;
-    private RecyclerLokerAdapter mAdapter;
+    private RecyclerAnnouncementAdapter mAdapter;
     private ProgressBar mProgressBar;
     private FirebaseStorage mStorage;
     private DatabaseReference mDatabaseRef;
     private ValueEventListener mDBListener;
     private List<Loker> mLoker;
 
-    private void openDetailActivity(String[] data){
-        Intent intent = new Intent(getActivity(), DetailLokerActivity.class);
+    private void openAnnouncementActivity(String[] data){
+        Intent intent = new Intent(getActivity(), AnnouncementActivity.class);
         intent.putExtra("NAME_KEY",data[0]);
         intent.putExtra("DESCRIPTION_KEY",data[1]);
         intent.putExtra("IMAGE_KEY",data[2]);
@@ -64,9 +64,9 @@ public class AnnouncementFragment extends Fragment implements RecyclerAnnounceme
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_loker, container, false);
+        View v = inflater.inflate(R.layout.fragment_announcement, container, false);
 
-        mRecyclerView = v.findViewById(R.id.lokerRecycler);
+        mRecyclerView = v.findViewById(R.id.lokerAnnouncementRecycler);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -74,7 +74,7 @@ public class AnnouncementFragment extends Fragment implements RecyclerAnnounceme
         mProgressBar.setVisibility(View.VISIBLE);
 
         mLoker = new ArrayList<>();
-        mAdapter = new RecyclerLokerAdapter (getActivity(), mLoker);
+        mAdapter = new RecyclerAnnouncementAdapter (getActivity(), mLoker);
         mRecyclerView.setAdapter(mAdapter);
 //        mAdapter.setOnItemClickListener(getContext());
 
@@ -104,12 +104,12 @@ public class AnnouncementFragment extends Fragment implements RecyclerAnnounceme
     public void onItemClick(int position) {
         Loker clickedLoker=mLoker.get(position);
         String[] lokerData={clickedLoker.getIndustry(),clickedLoker.getDescription(),clickedLoker.getImageURL()};
-        openDetailActivity(lokerData);
+        openAnnouncementActivity(lokerData);
     }
     public void onShowItemClick(int position) {
         Loker clickedLoker=mLoker.get(position);
         String[] lokerData={clickedLoker.getIndustry(),clickedLoker.getDescription(),clickedLoker.getImageURL()};
-        openDetailActivity(lokerData);
+        openAnnouncementActivity(lokerData);
     }
     public void onDeleteItemClick(int position) {
         Loker selectedItem = mLoker.get(position);

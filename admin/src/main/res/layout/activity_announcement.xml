@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AnnouncementActivity"
+    android:padding="16dp"
+    android:background="#f1f1f1">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        android:id="@+id/cvBanner">
+        <ImageView
+            android:id="@+id/announcementActivity_banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="#BDBDBD"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/announcementActivity_industry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cvBanner"
+        android:text="PT. Mencari Cinta Sejati"
+        android:textSize="20sp"
+        android:fontFamily="@font/quicksandbold"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/announcementActivity_deadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/announcementActivity_industry"
+        android:drawableStart="@drawable/ic_access_time_black_24dp"
+        android:text="12 Januari 2021"
+        android:textColor="#000"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="viewEnd"
+        android:layout_marginTop="5dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:id="@+id/rv_item_announcement"
+        tools:listitem="@layout/item_announcement"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/announcementActivity_deadline"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_announcement_black_24dp"
+        android:tint="#FFF"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"/>
+
+</RelativeLayout>
