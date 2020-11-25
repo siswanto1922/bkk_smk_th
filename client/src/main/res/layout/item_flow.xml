@@ -44,7 +44,7 @@
                     android:fontFamily="@font/quicksandbold"
                     android:textColor="#fff"
                     android:drawableTint="#fff"
-                    android:drawableStart="@drawable/ic_access_time_black_24dp"
+                    android:drawableStart="@drawable/ic_timer_off_black_24dp"
                     android:drawablePadding="5dp"/>
             </LinearLayout>
         </LinearLayout>

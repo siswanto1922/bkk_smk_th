@@ -74,7 +74,7 @@ public class ApplicantFormActivity extends AppCompatActivity {
                     appFormGraduated.setText(snapshot.child("graduate").getValue().toString());
                     appFormAddress.setText(snapshot.child("address").getValue().toString());
                 } catch (Exception e){
-                    Toast.makeText(getApplicationContext(), ""+e, Toast.LENGTH_SHORT).show();
+
                 }
             }
 
